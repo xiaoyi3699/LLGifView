@@ -46,11 +46,7 @@
 
 - (void)startGif{
     if (!_timer) {
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            _timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(play) userInfo:nil repeats:YES];
-            [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-            [[NSRunLoop currentRunLoop] run];
-        });
+        _timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(play) userInfo:nil repeats:YES];
     }
 }
 
@@ -62,14 +58,22 @@
 }
 
 - (void)play{
-    _index = _index%_count;
-    CGImageRef ref = CGImageSourceCreateImageAtIndex(_gif, _index, (CFDictionaryRef)_gifProperties);
-    self.layer.contents = (__bridge id)ref;
-    CFRelease(ref);
-    _index ++;
+    if (_gif) {
+        _index = _index%_count;
+        CGImageRef ref = CGImageSourceCreateImageAtIndex(_gif, _index, (CFDictionaryRef)_gifProperties);
+        self.layer.contents = (__bridge id)ref;
+        CFRelease(ref);
+        _index ++;
+    }
+}
+
+- (void)removeFromSuperview {
+    [self stopGif];
+    [super removeFromSuperview];
 }
 
 - (void)dealloc {
+    NSLog(@"gifView释放，无内存泄漏");
     CFRelease(_gif);
 }
 

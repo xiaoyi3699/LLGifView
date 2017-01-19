@@ -15,6 +15,8 @@
 		C67461841E308AB100B7D555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67461821E308AB100B7D555 /* LaunchScreen.storyboard */; };
 		C674618F1E308AB100B7D555 /* LLGifViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C674618E1E308AB100B7D555 /* LLGifViewTests.m */; };
 		C674619A1E308AB100B7D555 /* LLGifViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C67461991E308AB100B7D555 /* LLGifViewUITests.m */; };
+		C67461AA1E308BA400B7D555 /* LLGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = C67461A91E308BA400B7D555 /* LLGifView.m */; };
+		C67461AC1E308C1500B7D555 /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = C67461AB1E308C1500B7D555 /* example.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		C67461951E308AB100B7D555 /* LLGifViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLGifViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67461991E308AB100B7D555 /* LLGifViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLGifViewUITests.m; sourceTree = "<group>"; };
 		C674619B1E308AB100B7D555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C67461A81E308BA400B7D555 /* LLGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifView.h; sourceTree = "<group>"; };
+		C67461A91E308BA400B7D555 /* LLGifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifView.m; sourceTree = "<group>"; };
+		C67461AB1E308C1500B7D555 /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,8 @@
 		C67461731E308AB000B7D555 /* LLGifView */ = {
 			isa = PBXGroup;
 			children = (
+				C67461AB1E308C1500B7D555 /* example.gif */,
+				C67461A71E308BA400B7D555 /* LLGifView */,
 				C67461771E308AB000B7D555 /* AppDelegate.h */,
 				C67461781E308AB000B7D555 /* AppDelegate.m */,
 				C674617A1E308AB000B7D555 /* ViewController.h */,
@@ -138,6 +145,15 @@
 				C674619B1E308AB100B7D555 /* Info.plist */,
 			);
 			path = LLGifViewUITests;
+			sourceTree = "<group>";
+		};
+		C67461A71E308BA400B7D555 /* LLGifView */ = {
+			isa = PBXGroup;
+			children = (
+				C67461A81E308BA400B7D555 /* LLGifView.h */,
+				C67461A91E308BA400B7D555 /* LLGifView.m */,
+			);
+			path = LLGifView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +268,7 @@
 				C67461841E308AB100B7D555 /* LaunchScreen.storyboard in Resources */,
 				C67461811E308AB100B7D555 /* Assets.xcassets in Resources */,
 				C674617F1E308AB000B7D555 /* Main.storyboard in Resources */,
+				C67461AC1E308C1500B7D555 /* example.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +296,7 @@
 				C674617C1E308AB000B7D555 /* ViewController.m in Sources */,
 				C67461791E308AB000B7D555 /* AppDelegate.m in Sources */,
 				C67461761E308AB000B7D555 /* main.m in Sources */,
+				C67461AA1E308BA400B7D555 /* LLGifView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 78835ZHBFS;
 				INFOPLIST_FILE = LLGifView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maochao.LLGifView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 78835ZHBFS;
 				INFOPLIST_FILE = LLGifView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.maochao.LLGifView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +536,7 @@
 				C67461A01E308AB100B7D555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C67461A11E308AB100B7D555 /* Build configuration list for PBXNativeTarget "LLGifViewTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +545,7 @@
 				C67461A31E308AB100B7D555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C67461A41E308AB100B7D555 /* Build configuration list for PBXNativeTarget "LLGifViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +554,7 @@
 				C67461A61E308AB100B7D555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
