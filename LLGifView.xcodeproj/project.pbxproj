@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751F90821EF0E4EF00D78EB4 /* LLGifImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 751F90811EF0E4EF00D78EB4 /* LLGifImageView.m */; };
+		751F90841EF1053000D78EB4 /* 888.gif in Resources */ = {isa = PBXBuildFile; fileRef = 751F90831EF1053000D78EB4 /* 888.gif */; };
 		C67461761E308AB000B7D555 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C67461751E308AB000B7D555 /* main.m */; };
 		C67461791E308AB000B7D555 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C67461781E308AB000B7D555 /* AppDelegate.m */; };
 		C674617C1E308AB000B7D555 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C674617B1E308AB000B7D555 /* ViewController.m */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751F90801EF0E4EF00D78EB4 /* LLGifImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifImageView.h; sourceTree = "<group>"; };
+		751F90811EF0E4EF00D78EB4 /* LLGifImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifImageView.m; sourceTree = "<group>"; };
+		751F90831EF1053000D78EB4 /* 888.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 888.gif; sourceTree = "<group>"; };
 		C67461711E308AB000B7D555 /* LLGifView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLGifView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67461751E308AB000B7D555 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C67461771E308AB000B7D555 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 		C67461731E308AB000B7D555 /* LLGifView */ = {
 			isa = PBXGroup;
 			children = (
+				751F90831EF1053000D78EB4 /* 888.gif */,
 				C67461AB1E308C1500B7D555 /* example.gif */,
 				C67461A71E308BA400B7D555 /* LLGifView */,
 				C67461771E308AB000B7D555 /* AppDelegate.h */,
@@ -152,6 +158,8 @@
 			children = (
 				C67461A81E308BA400B7D555 /* LLGifView.h */,
 				C67461A91E308BA400B7D555 /* LLGifView.m */,
+				751F90801EF0E4EF00D78EB4 /* LLGifImageView.h */,
+				751F90811EF0E4EF00D78EB4 /* LLGifImageView.m */,
 			);
 			path = LLGifView;
 			sourceTree = "<group>";
@@ -223,7 +231,7 @@
 				TargetAttributes = {
 					C67461701E308AB000B7D555 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 78835ZHBFS;
+						DevelopmentTeam = N6X5V58LVJ;
 						ProvisioningStyle = Automatic;
 					};
 					C67461891E308AB100B7D555 = {
@@ -266,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C67461841E308AB100B7D555 /* LaunchScreen.storyboard in Resources */,
+				751F90841EF1053000D78EB4 /* 888.gif in Resources */,
 				C67461811E308AB100B7D555 /* Assets.xcassets in Resources */,
 				C674617F1E308AB000B7D555 /* Main.storyboard in Resources */,
 				C67461AC1E308C1500B7D555 /* example.gif in Resources */,
@@ -297,6 +306,7 @@
 				C67461791E308AB000B7D555 /* AppDelegate.m in Sources */,
 				C67461761E308AB000B7D555 /* main.m in Sources */,
 				C67461AA1E308BA400B7D555 /* LLGifView.m in Sources */,
+				751F90821EF0E4EF00D78EB4 /* LLGifImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 78835ZHBFS;
+				DEVELOPMENT_TEAM = N6X5V58LVJ;
 				INFOPLIST_FILE = LLGifView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -458,7 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 78835ZHBFS;
+				DEVELOPMENT_TEAM = N6X5V58LVJ;
 				INFOPLIST_FILE = LLGifView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

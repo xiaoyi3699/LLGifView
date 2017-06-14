@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "LLGifImageView.h"
 #import "LLGifView.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) LLGifView *gifView;
+@property (nonatomic, strong) LLGifImageView *gifImageView;
 
 @end
 
@@ -24,19 +26,35 @@
 //方式一：显示本地Gif图片(将图片转为NSData数据)
 - (IBAction)btn1:(UIButton *)sender {
     [self removeGif];
+    
+    //方法1:适用于帧数少的gif动画
     NSData *localData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"example" ofType:@"gif"]];
     _gifView = [[LLGifView alloc] initWithFrame:CGRectMake(100, 100, 200, 80) data:localData];
     [self.view addSubview:_gifView];
     [_gifView startGif];
+    
+    //方法2:适用于帧数多的gif动画
+//    NSData *localData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"888" ofType:@"gif"]];
+//    _gifImageView = [[LLGifImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 80) data:localData];
+//    [self.view addSubview:_gifImageView];
+//    [_gifImageView startGif];
 }
 
 //方式二：显示本地Gif图片(得到图片的路径)
 - (IBAction)btn2:(UIButton *)sender {
     [self removeGif];
+    
+    //方法1:适用于帧数少的gif动画
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"example" ofType:@"gif"];
     _gifView = [[LLGifView alloc] initWithFrame:CGRectMake(100, 200, 200, 80) filePath:filePath];
     [self.view addSubview:_gifView];
     [_gifView startGif];
+    
+    //方法2:适用于帧数多的gif动画
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"888" ofType:@"gif"];
+//    _gifImageView = [[LLGifImageView alloc] initWithFrame:CGRectMake(100, 200, 200, 80) filePath:filePath];
+//    [self.view addSubview:_gifImageView];
+//    [_gifImageView startGif];
 }
 
  //方式三：显示从网络获取的Gif图片
@@ -62,6 +80,10 @@
     if (_gifView) {
         [_gifView removeFromSuperview];
         _gifView = nil;
+    }
+    if (_gifImageView) {
+        [_gifImageView removeFromSuperview];
+        _gifImageView = nil;
     }
 }
 
