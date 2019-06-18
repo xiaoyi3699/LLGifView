@@ -17,7 +17,6 @@
 		C67461841E308AB100B7D555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67461821E308AB100B7D555 /* LaunchScreen.storyboard */; };
 		C674618F1E308AB100B7D555 /* LLGifViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C674618E1E308AB100B7D555 /* LLGifViewTests.m */; };
 		C674619A1E308AB100B7D555 /* LLGifViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C67461991E308AB100B7D555 /* LLGifViewUITests.m */; };
-		C67461AA1E308BA400B7D555 /* LLGifView.m in Sources */ = {isa = PBXBuildFile; fileRef = C67461A91E308BA400B7D555 /* LLGifView.m */; };
 		C67461AC1E308C1500B7D555 /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = C67461AB1E308C1500B7D555 /* example.gif */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +57,6 @@
 		C67461951E308AB100B7D555 /* LLGifViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLGifViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67461991E308AB100B7D555 /* LLGifViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLGifViewUITests.m; sourceTree = "<group>"; };
 		C674619B1E308AB100B7D555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C67461A81E308BA400B7D555 /* LLGifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLGifView.h; sourceTree = "<group>"; };
-		C67461A91E308BA400B7D555 /* LLGifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLGifView.m; sourceTree = "<group>"; };
 		C67461AB1E308C1500B7D555 /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +110,7 @@
 			children = (
 				751F90831EF1053000D78EB4 /* 888.gif */,
 				C67461AB1E308C1500B7D555 /* example.gif */,
-				C67461A71E308BA400B7D555 /* LLGifView */,
+				C67461A71E308BA400B7D555 /* LLGifImageView */,
 				C67461771E308AB000B7D555 /* AppDelegate.h */,
 				C67461781E308AB000B7D555 /* AppDelegate.m */,
 				C674617A1E308AB000B7D555 /* ViewController.h */,
@@ -153,15 +150,13 @@
 			path = LLGifViewUITests;
 			sourceTree = "<group>";
 		};
-		C67461A71E308BA400B7D555 /* LLGifView */ = {
+		C67461A71E308BA400B7D555 /* LLGifImageView */ = {
 			isa = PBXGroup;
 			children = (
-				C67461A81E308BA400B7D555 /* LLGifView.h */,
-				C67461A91E308BA400B7D555 /* LLGifView.m */,
 				751F90801EF0E4EF00D78EB4 /* LLGifImageView.h */,
 				751F90811EF0E4EF00D78EB4 /* LLGifImageView.m */,
 			);
-			path = LLGifView;
+			path = LLGifImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,7 +301,6 @@
 				C674617C1E308AB000B7D555 /* ViewController.m in Sources */,
 				C67461791E308AB000B7D555 /* AppDelegate.m in Sources */,
 				C67461761E308AB000B7D555 /* main.m in Sources */,
-				C67461AA1E308BA400B7D555 /* LLGifView.m in Sources */,
 				751F90821EF0E4EF00D78EB4 /* LLGifImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
