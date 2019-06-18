@@ -231,7 +231,7 @@
 				TargetAttributes = {
 					C67461701E308AB000B7D555 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = N6X5V58LVJ;
+						DevelopmentTeam = 78Y7DBKKYD;
 						ProvisioningStyle = Automatic;
 					};
 					C67461891E308AB100B7D555 = {
@@ -253,6 +253,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -455,7 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6X5V58LVJ;
+				DEVELOPMENT_TEAM = 78Y7DBKKYD;
 				INFOPLIST_FILE = LLGifView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -468,7 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N6X5V58LVJ;
+				DEVELOPMENT_TEAM = 78Y7DBKKYD;
 				INFOPLIST_FILE = LLGifView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

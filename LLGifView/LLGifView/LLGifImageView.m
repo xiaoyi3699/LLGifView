@@ -11,35 +11,33 @@
 
 @interface LLGifImageView ()
 
-@property (nonatomic, assign) BOOL isPlaying;
+@property (nonatomic, assign) BOOL playing;
 @property (nonatomic, assign) NSInteger imageIndex;
-@property (nonatomic, assign) BOOL isSourceChange;
+@property (nonatomic, assign, getter=isSourceChange) BOOL sourceChange;
 @property (nonatomic, assign) NSUInteger lastCount;
 
 @end
 
 @implementation LLGifImageView
 
-- (instancetype)initWithFrame:(CGRect)frame filePath:(NSString *)filePath{
-    self = [super initWithFrame:frame];
+- (instancetype)init {
+    self = [super init];
     if (self) {
         [self configSelf];
-        self.gifData = [NSData dataWithContentsOfFile:filePath];
     }
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame data:(NSData *)data {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self configSelf];
-        self.gifData = data;
     }
     return self;
 }
 
 - (void)configSelf {
-    _isPlaying = NO;
+    _playing = NO;
     _loopCount = NSUIntegerMax;
     _imageIndex = 0;
     _speed = 1.0;
@@ -52,9 +50,11 @@
         return;
     }
     _gifData = gifData;
-    _isSourceChange = YES;
+    _sourceChange = YES;
     _imageIndex = 0;
-    self.image = [UIImage imageWithData:_gifData];
+    if (gifData) {
+        self.image = [UIImage imageWithData:_gifData];
+    }
 }
 
 #pragma mark - 操作
@@ -69,22 +69,22 @@
 }
 
 - (void)pauseGif {
-    _isPlaying = NO;
+    _playing = NO;
 }
 
 - (void)stopGif {
-    _isPlaying = NO;
+    _playing = NO;
     _imageIndex = 0;
     self.image = [UIImage imageWithData:_gifData];
 }
 
 #pragma mark - gif播发代码
 - (void)playGifAnimation {
-    if (_isPlaying) {
+    if (self.isPlaying) {
         return;
     }
     else {
-        _isPlaying = YES;
+        _playing = YES;
     }
     __weak typeof(self)weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -97,7 +97,7 @@
             NSDate *beginTime = [NSDate date];
             // gifData改变或者线程刚开始src为nil，并且要gifData有数据
             if ((weakSelf.isSourceChange || src == nil) && weakSelf.gifData != nil) {
-                weakSelf.isSourceChange = NO;
+                weakSelf.sourceChange = NO;
                 if (src) {
                     CFRelease(src);
                 }
@@ -131,11 +131,13 @@
                 image = [LLGifImageView imageWithSource:src andIndex:weakSelf.imageIndex];
                 if (frameCacheInterval < frameCount
                     && weakSelf.imageIndex % frameCacheInterval == 0) {
-                    imageCache[@(weakSelf.imageIndex)] = image;
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        imageCache[@(weakSelf.imageIndex)] = image;
+                    });
                 }
             }
             [NSThread sleepUntilDate:[beginTime dateByAddingTimeInterval:frameDelay]];
-            dispatch_sync(dispatch_get_main_queue(), ^{  // 使用异步的话有小概率出现问题
+            dispatch_sync(dispatch_get_main_queue(), ^{
                 if (weakSelf.isPlaying && !weakSelf.isSourceChange) {
                     weakSelf.image = image;
                 }
@@ -144,7 +146,7 @@
         if (src) {
             CFRelease(src);
         }
-        weakSelf.isPlaying = NO;
+        weakSelf.playing = NO;
     });
 }
 
@@ -231,10 +233,6 @@
 - (void)removeFromSuperview {
     [self stopGif];
     [super removeFromSuperview];
-}
-
-- (void)dealloc {
-    NSLog(@"释放");
 }
 
 @end

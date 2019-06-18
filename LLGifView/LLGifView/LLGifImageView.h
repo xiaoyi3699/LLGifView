@@ -16,16 +16,12 @@
  */
 @interface LLGifImageView : UIImageView
 
-///初始化LLGifImageView
-- (instancetype)initWithFrame:(CGRect)frame filePath:(NSString *)filePath;
-- (instancetype)initWithFrame:(CGRect)frame data:(NSData *)data;
-
 ///无效初始化
 - (instancetype)initWithImage:(UIImage *)image UNAVAILABLE_ATTRIBUTE;
 - (instancetype)initWithImage:(UIImage *)image highlightedImage:(UIImage *)highlightedImage UNAVAILABLE_ATTRIBUTE;
 
 ///是否在播放
-@property (nonatomic, assign, readonly) BOOL isPlaying;
+@property (nonatomic, assign, readonly, getter=isPlaying) BOOL playing;
 
 ///播放次数，设置为 NSUIntegerMax 表示无限播发。默认为NSUIntegerMax。
 @property (nonatomic, assign) NSUInteger loopCount;
